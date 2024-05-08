@@ -43,19 +43,17 @@ const Navbar = () => {
             <line x1="3" y1="18" x2="21" y2="18"/>
           </svg>
         </button>
-        {menuOpen && (
-          <div className="fixed inset-0 z-50 flex justify-end">
-            <div className="bg-gray-900 bg-opacity-75 w-64 h-full overflow-y-auto">
-              <ul className="py-4">
-                {['Home', 'About', 'Services', 'Pages', 'News', 'Contact'].map((item, index) => (
-                  <li key={index} className={`text-white text-lg font-bold py-2 px-4 cursor-pointer ${selectedItem === item ? 'bg-green-600' : 'hover:bg-green-700'}`} onClick={() => handleItemClick(item)}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className={`fixed inset-0 z-50 flex justify-end transition-opacity delay-300 ${menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+          <div className="bg-gray-900 bg-opacity-75 w-64 h-full overflow-y-auto transform transition-transform ease-out duration-500 delay-300">
+            <ul className="py-4">
+              {['Home', 'About', 'Services', 'Pages', 'News', 'Contact'].map((item, index) => (
+                <li key={index} className={`text-white text-lg font-bold py-2 px-4 cursor-pointer ${selectedItem === item ? 'bg-green-600' : 'hover:bg-green-700'}`} onClick={() => handleItemClick(item)}>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
-        )}
+        </div>
       </div>
       <ul className="lg:flex hidden space-x-8">
         {['Home', 'About', 'Services', 'Pages', 'News', 'Contact'].map((item, index) => (
