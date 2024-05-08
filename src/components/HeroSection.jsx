@@ -28,7 +28,7 @@ const HeroSection = () => {
   return (
     <div className="container mx-auto px-4 md:px-0">
       {/* Grid for desktop */}
-      <div className='text-white flex flex-col md:flex-row  mb-8 md:mb-0'>
+      <div className='grid sm:grid-cols-3 gap-4 grid-cols-0 place-content-center text-white mb-0 m-8'>
 
         {/* First Section */}
         <div className='flex flex-col md:w-1/2'>
